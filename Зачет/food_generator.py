@@ -20,13 +20,14 @@ tasks = [fake_fruit(fake), fake_vegetable(fake)]
 
 
 def gen_food():
-    # food_dict = {food_name: {price: 20.00, rating: 5.0 }}
+    # food_dict = {name: food_name, price: 20.00, rating: 5.0}
 
     random_idx = random.randint(0, 1)
 
     while True:
-        food_dict = {tasks[random_idx]: {"price": round(random.uniform(40, 4000), 2),
-                                         "rating": round(random.uniform(0, 5), 2)}}
+        food_dict = {"name": tasks[random_idx],
+                     "price": round(random.uniform(40, 4000), 2),
+                     "rating": round(random.uniform(0, 5), 2)}
         yield food_dict
 
 
